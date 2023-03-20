@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using RestASPNET.Model.Context;
 using RestASPNET.Services;
 using RestASPNET.Services.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<MySqlContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("MySQLConnectionString"), 
+                        new MySqlServerVersion(new Version()))
+    );
 
 // Add services to the container.
 
