@@ -1,4 +1,6 @@
-﻿using RestASPNET.Model;
+﻿using RestASPNET.Data.Converter.Implementations;
+using RestASPNET.Data.VO;
+using RestASPNET.Model;
 using RestASPNET.Repository;
 using RestASPNET.Repository.Generic;
 
@@ -7,23 +9,33 @@ namespace RestASPNET.Business.Implementations
     public class BookBusinessImplementation : IBookBusiness
     {
         private readonly IRepository<Book> _repository;
+        private readonly BookConverter _converter;
 
         public BookBusinessImplementation(IRepository<Book> repository)
         {
             _repository = repository;
+            _converter = new BookConverter();
         }
-        public Book FindById(int id)
+        public BookVO FindById(int id)
         {
-            return _repository.FindById(id);
+            return _converter.Parse(_repository.FindById(id));
         }
 
-        public async Task<List<Book>> AllAsync()
+        public async Task<List<BookVO>> AllAsync()
         {
-            return await _repository.GetAllAsync();
+            return await _converter.ParseAsync(_repository.GetAllAsync());
         }
-        public Book Create(Book book)
+
+        public BookVO Create(BookVO book)
         {
-            return _repository.Create(book);
+            var bookEntity = _converter.Parse(book);
+            return _converter.Parse(_repository.Create(bookEntity));
+        }
+
+        public BookVO Update(BookVO book)
+        {
+            var bookEntity = _converter.Parse(book);
+            return _converter.Parse(_repository.Update(bookEntity));
         }
 
         public void Delete(int id)
@@ -31,9 +43,6 @@ namespace RestASPNET.Business.Implementations
             _repository.Delete(id);
         }
 
-        public Book Update(Book book)
-        {
-            return _repository.Update(book);
-        }
+
     }
 }

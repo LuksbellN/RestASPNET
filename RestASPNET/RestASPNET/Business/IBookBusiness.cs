@@ -1,13 +1,13 @@
-﻿using RestASPNET.Model;
+﻿using RestASPNET.Data.VO;
 
 namespace RestASPNET.Business
 {
     public interface IBookBusiness
     {
-        Book FindById(int id);
-        Task<List<Book>> AllAsync();
-        Book Create(Book book);
-        Book Update(Book book);
+        BookVO FindById(int id);
+        Task<List<BookVO>> AllAsync();
+        BookVO Create(BookVO book);
+        BookVO Update(BookVO book);
         void Delete(int id);
     }
 }

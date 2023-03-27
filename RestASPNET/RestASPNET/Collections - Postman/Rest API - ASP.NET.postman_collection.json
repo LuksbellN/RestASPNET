@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "8c6c4183-5e0e-4f00-9e07-97f02a080b48",
+		"name": "Rest API - ASP.NET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22720020"
+	},
+	"item": [
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "GetAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/person",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/person/8",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"person",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n        \"name\": \"Michael\",\r\n        \"last Name\": \"Scott\",\r\n        \"address\": \"Dunder Mifflin-USA\",\r\n        \"sex\": \"Male\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/person/",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"person",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": 8,\r\n    \"name\": \"Michael\",\r\n    \"last Name\": \"Scott\",\r\n    \"address\": \"Dunder Mifflin - USA\",\r\n    \"sex\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/person",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/person/8",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"person",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "GetAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/book",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/book/19",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"book",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Java Sping Boot\",\r\n    \"author\": \"Gosling\",\r\n    \"launch_Date\": \"2001-11-11T15:09:01.674\",\r\n    \"price\": 50.00\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/book",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 19,\r\n    \"title\": \"Java Spring Boot\",\r\n    \"author\": \"Gosling\",\r\n    \"launch_Date\": \"2001-11-11T15:09:01.674\",\r\n    \"price\": 50.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/book",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Host}}/v{{version}}/api/book/6",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v{{version}}",
+								"api",
+								"book",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Authenticate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(responseCode.code >= 200 && responseCode.code <= 299){\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"    postman.setEnvironmentVariable(\"accessToken\", jsonData.accessToken)\r",
+									"\r",
+									"    postman.setEnvironmentVariable(\"refreshToken\", jsonData.refreshToken)\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"lucas\",\r\n  \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/v1/api/auth/signin",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Host",
+			"value": "https://localhost:7015",
+			"type": "string"
+		},
+		{
+			"key": "HOST",
+			"value": "https://localhost:7015"
+		},
+		{
+			"key": "version",
+			"value": "1"
+		}
+	]
+}

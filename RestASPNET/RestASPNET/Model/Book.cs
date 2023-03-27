@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace RestASPNET.Model
 {
     [Table("books")]
-    public class Book : BaseEntity
+    public class Book: BaseEntity
     {
         [Column("title")]
         public string Title { get; set; }
